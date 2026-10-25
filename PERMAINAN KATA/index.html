@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KataSakti - Permainan Acak Kata</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-container">
+    <header class="game-header">
+      <h1 class="logo">Kata<span>Sakti</span> 🔤</h1>
+      <p class="subtitle">Asah otakmu dengan menebak kata yang diacak!</p>
+    </header>
+
+    <!-- Board Statistik -->
+    <div class="stats-board">
+      <div class="stat-card">
+        <span class="stat-label">SKOR</span>
+        <span id="score-val" class="stat-value">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">STREAK</span>
+        <span id="streak-val" class="stat-value">0 🔥</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">REKOR</span>
+        <span id="highscore-val" class="stat-value">0</span>
+      </div>
+    </div>
+
+    <!-- Area Permainan -->
+    <main class="game-card">
+      <div class="category-badge">
+        Kategori: <strong id="category-name">Hewan</strong>
+      </div>
+
+      <!-- Huruf Acak -->
+      <div id="scrambled-word" class="word-display">
+        <!-- Tile huruf akan di-generate via JavaScript -->
+      </div>
+
+      <!-- Petunjuk / Hint -->
+      <div id="hint-box" class="hint-box hidden">
+        💡 <strong>Petunjuk:</strong> <span id="hint-text">...</span>
+      </div>
+
+      <!-- Form Input Jawaban -->
+      <form id="guess-form" class="guess-form" autocomplete="off">
+        <input 
+          type="text" 
+          id="user-input" 
+          placeholder="Ketik jawaban di sini..." 
+          maxlength="20"
+          autofocus
+        />
+        <button type="submit" class="btn btn-primary">Jawab</button>
+      </form>
+
+      <!-- Feedback Pesan -->
+      <div id="message-box" class="message-box"></div>
+
+      <!-- Tombol Aksi Tambahan -->
+      <div class="action-buttons">
+        <button id="btn-hint" class="btn btn-secondary">💡 Petunjuk (-5 Poin)</button>
+        <button id="btn-skip" class="btn btn-outline">⏭️ Lewati Kata</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="game-footer">
+      <p>Dibuat untuk Tugas Pemrograman Web &bull; HTML, CSS, JS</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
